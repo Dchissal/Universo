@@ -1,0 +1,1 @@
+-I./minilibx-linux -L./minilibx-linux -lmlx -L/usr/include/../lib -lXext -lX11 -lm -lbsd
