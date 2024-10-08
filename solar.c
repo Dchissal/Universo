@@ -225,6 +225,13 @@ int	render_frame(t_solar_system *system)
 	return (0);
 }
 
+int	close_window(t_solar_system *system)
+{
+	mlx_destroy_window(system->mlx_ptr, system->win_ptr);
+	exit(0);
+	return (0);
+}
+
 int	main(void)
 {
 	t_solar_system system;
@@ -255,6 +262,7 @@ int	main(void)
 	usleep(1000);
 	//return (0);
 	//draw_universe(&system);*/
+	mlx_hook(system.win_ptr, 17, 0, close_window, &system);
 	mlx_loop_hook(system.mlx_ptr, render_frame, &system);
 	mlx_loop(system.mlx_ptr);
 
